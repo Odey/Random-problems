@@ -1,0 +1,9 @@
+from itertools import combinations
+arr = [1,2,4,5,7,8,9,3]
+tar = 10
+arr.sort()
+
+
+lst = [x for x in combinations(arr,2) if sum(x)==tar]
+print lst
+	
