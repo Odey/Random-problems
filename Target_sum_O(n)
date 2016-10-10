@@ -1,0 +1,20 @@
+import random
+in_lst=random.sample(range(1,100),25)
+target=50
+
+def is_pair(in_lst, target):
+	in_dict={}
+	bool_is_pair=False
+	for i in range(len(in_lst)):
+		in_dict[in_lst[i]]=None
+	i=0
+	while i<=len(in_dict)-1:
+		if (target-list(in_dict.keys())[i]) in in_dict.keys():
+			bool_is_pair=True
+			print(list(in_dict.keys())[i],"and",target-list(in_dict.keys())[i], "Will sum up to", target)
+		i+=1
+	else:
+		return bool_is_pair
+		
+		
+print (is_pair(in_lst, target))
