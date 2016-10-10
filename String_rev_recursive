@@ -1,0 +1,10 @@
+
+def reverse(s):
+	if len(s)<=1:
+		return s
+	else:
+		st = s[0]
+		s = s[1:]
+    	return reverse(s)+st
+
+print reverse("hello")
