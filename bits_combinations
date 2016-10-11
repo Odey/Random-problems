@@ -1,0 +1,6 @@
+from itertools import permutations
+inp = "01x"
+inp = (inp[0:inp.index('x')] + "01")
+l = set([x for x in permutations(inp,3)])
+
+print l
