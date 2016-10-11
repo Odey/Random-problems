@@ -1,0 +1,17 @@
+
+def buildTree():
+    return ['a',['b',[],'d'],['c','e','f']]
+    pass
+
+def getRootVal(root):
+    return root[0]
+def getRightChild(root):
+    return root[2]
+def getLeftChild(root):
+    return root[1]
+
+ttree = buildTree()
+
+print(getRootVal(getRightChild(ttree)))
+print(getRootVal(getRightChild(getLeftChild(ttree))))
+print(getRootVal(getRightChild(getRightChild(ttree))))
