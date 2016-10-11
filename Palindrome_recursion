@@ -1,0 +1,20 @@
+def removeWhite(s):
+	
+	s = "".join([s[i] for i in range(len(s)) if s[i].isalnum()])
+	return s
+
+def isPal(s):
+
+	if len(s)<=1:
+		return True
+	if (s[0] == s[len(s)-1]):
+		s=s[1:len(s)-1]
+
+		isPal(s)
+		return True
+	else:
+		return False
+
+print(isPal(removeWhite("x")),True)
+print(isPal(removeWhite("radar")),True)
+print(isPal(removeWhite("madam i'm adam")),True)
