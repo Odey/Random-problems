@@ -1,3 +1,40 @@
+#Binary Search
+#1. list should be in a sorted form
+import random
+
+#Iteratively
+def BinarySearch(lst, key):
+	low = 0
+	high = len(lst)-1
+	print(key, " to be found")
+	while(high>low):
+		mid = (high+low)//2
+		if(lst[mid]==key):
+			print (key," Found !!")
+			return
+		elif lst[mid] > key:
+			high=mid-1
+		else:
+			low = mid+1
+	print("Not Found !!")
+	return
+'''
+# recursively
+
+def BinarySearch(lst, key, mid):
+	print(lst)
+	if (len(lst)==0):
+		print (key, " Not Found ")
+		return
+	if lst[mid] == key:
+		print (key, " Found ")
+		return
+	elif lst[mid] > key:
+		BinarySearch(lst[0:mid],key,(mid)//2)
+	else:
+		BinarySearch(lst[mid+1: len(lst)],key,(len(lst)-mid)//2)
+
+
 def linearsearch(lst,key):
 	for i in lst:
 		if i == key:
@@ -5,7 +42,7 @@ def linearsearch(lst,key):
 			return
 	print ("key doesnot exist")
 	return 
-
+'''
 def Rotatedsearch(lst, key):
 	mid = len(lst)//2
 	
@@ -14,19 +51,20 @@ def Rotatedsearch(lst, key):
 			print("Found in mid")
 		elif key < lst[mid]:
 			print("Its in left side")
-			linearsearch(lst[0:mid],key)
+			#linearsearch(lst[0:mid],key)
+			BinarySearch(lst[0:mid],key)
 		else:
 			print("right side")
-			linearsearch(lst[mid:],key)
+			BinarySearch(lst[mid:],key)
 	elif key > lst[0]:
 		if key == lst[mid]:
 			print("Found in mid")
 		elif key < lst[mid]:
 			print("Its in right side")
-			linearsearch(lst[mid+1:],key)
+			BinarySearch(lst[mid+1:],key)
 		else:
 			print("left side")
-			linearsearch(lst[0:mid],key)
+			BinarySearch(lst[0:mid],key)
 	else:
 		print("Key is 1st element")
 
@@ -36,8 +74,9 @@ print (lst)
 #BinarySearch(sorted(lst), random.randrange(1,100))
 
 lst = [9,10,11,12,13,14,15,1,2,3,4,5,6,7,8]
-key = 17
+key = 8
 print(lst)
 #BinarySearch(sorted(lst), random.randrange(1,100), (len(lst)-1)//2)
 #BinarySearch(sorted(lst), key, (len(lst)-1)//2)
 Rotatedsearch(lst, key)
+
