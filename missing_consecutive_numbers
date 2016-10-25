@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdbool.h>
+#include<math.h>
+// I method : O(n)
+/*void missing_consecutive_num(int a[], int n){
+    int i=0;
+
+    for (i =0; i<n;i++){
+        if(a[i+1] != a[i]+1){
+            printf("missing num : %d \n", a[i+1]-1);
+            break;
+        }
+    }
+}
+*/
+void missing_consecutive_num(int a[], int start, int end){
+    int mid = (int)((start+end)/2);
+    if(start+1 == end){
+        if (a[start]+1 != a[end]){
+            printf("%d", a[end]-1);
+            exit(0);
+        }
+        else{
+           return;
+        }
+    }
+    missing_consecutive_num(a,start,mid);
+    missing_consecutive_num(a,mid,end);
+
+}
+void main(){
+    int a[10] = {2,3,4,5,7,8,9};
+    int n = sizeof(a)/sizeof(int);
+    //missing_consecutive_num(a,n);
+    missing_consecutive_num(a,0,n-1);
+
+}
