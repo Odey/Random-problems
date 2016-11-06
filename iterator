@@ -1,0 +1,22 @@
+class iterator:
+	def __init__(self, lst):
+		self.lst = lst
+		self.cnt = 0
+		self.l = len(lst)
+	
+	def nextit(self):
+		val = self.cnt
+		self.cnt +=1
+		if(val<self.l):
+			return val
+		else:
+			raise StopIteration
+lst = [2,3,4,5,6,7]			
+it = iterator([2,3,4,5,6,7])
+print(lst[it.nextit()])
+print(it.nextit())
+print(it.nextit())
+print(it.nextit())
+print(it.nextit())
+print(it.nextit())
+print(it.nextit())
